@@ -1,0 +1,15 @@
+
+import basics
+
+foreign SetConsoleOutputCP(uint) int
+define CP_UTF8 = 65001
+
+func main {
+    #if __windows__
+    SetConsoleOutputCP(CP_UTF8)
+    #end
+
+    text String = embed "asian.txt"
+    print(text)
+}
+
